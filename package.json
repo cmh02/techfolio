@@ -1,0 +1,22 @@
+{
+  "name": "cmh02_techfolio",
+  "version": "1.0.0",
+  "description": "My Personal Portfolio Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmh02/techfolio.git"
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "author": "Chris Hinkson [cmh0201@auburn.edu]",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cmh02/techfolio/issues"
+  },
+  "homepage": "https://github.com/cmh02/techfolio#readme"
+}
