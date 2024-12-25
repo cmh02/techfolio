@@ -4,7 +4,8 @@
   "description": "My Personal Portfolio Website",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node src/index.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,10 @@
   "bugs": {
     "url": "https://github.com/cmh02/techfolio/issues"
   },
-  "homepage": "https://github.com/cmh02/techfolio#readme"
+  "homepage": "https://github.com/cmh02/techfolio#readme",
+  "devDependencies": {
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0"
+  }
 }
