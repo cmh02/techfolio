@@ -18,9 +18,10 @@ function App() {
           Learn React
         </a>
       </header>
-	  <h1 className="text-7xl; font-bold">
-		Sample Text. Lol. Finish Later. Pce! I wanted to make better commit message.
-	  </h1>
+      <h1 className="text-7xl; font-bold">
+        Sample Text. Lol. Finish Later. Pce! I wanted to make better commit
+        message.
+      </h1>
     </div>
   );
 }
