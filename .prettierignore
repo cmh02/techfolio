@@ -1,0 +1,19 @@
+# Ignore artifacts:
+build
+coverage
+public
+
+# Ignore all HTML files:
+**/*.html
+
+# Ignore root level files:
+tailwind.config.js
+package.json
+README.md
+
+# Default Ignores: 
+
+**/.git
+**/.svn
+**/.hg
+**/node_modules
