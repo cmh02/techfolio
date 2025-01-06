@@ -68,3 +68,28 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## Creating and Deploying to Github Pages
+
+1. Fork this Repo to a one - {username}.github.io
+2. Update the package.json - Home Property
+	- "homepage": "https://{username}.github.io", // Update to correct username
+3. Checkout the main branch for this new repo
+4. Run npm install --legacy-peer-deps
+5. Run npm run deploy -- -m "Deploy React app to GitHub Pages vX.X.X" //make sure to update the version correctly
+	- This will create a new branch in the repo called gh-pages, if one doesn't exists other wise it just creates an update
+6. Configure GitHub Pages
+	- Navigate to the GitHub Pages settings page
+		- In your web browser, navigate to the GitHub repository
+		- Above the code browser, click on the tab labeled "Settings"
+		- In the sidebar, in the "Code and automation" section, click on "Pages"
+	- Configure the "Build and deployment" settings like this:
+		- Source: Deploy from a branch
+		- Branch:
+			- Branch: gh-pages
+			- Folder: / (root)
+	- Click on the "Save" button
+7. If any edits were made make sure to update them back in the main repo.
+	- Make sure any commits done during deploy updates are marked with correct versioning
+	- vX.X.X
