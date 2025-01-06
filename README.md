@@ -24,9 +24,23 @@ To install Node, we can use NVM. Following the instructions given on [the NVM Gi
 
 To install TailwindCSS, you can run the simple terminal command `npm install -D tailwindcss`. For more information, see the [TailwindCSS Installation Docs](https://tailwindcss.com/docs/installation "TailwindCSS Installation Docs").
 
-##### Installing Prettier
+##### Installing ESLint and Prettier via NPM
+
+You have two options when installing ESLint and Prettier:
+
+###### Installing ESLint and Prettier Together
+
+To install ESLint and Prettier together, you can run the singular command `npm install -D eslint prettier eslint-plugin-react eslint-config-prettier eslint-plugin-prettier.`
+
+###### Installing ESLint and Prettier Separately
+
+To install ESLint, you can run the simple terminal command `npm init @eslint/config@latest`. For more information, see the [ESLint Installation Docs](https://eslint.org/docs/latest/use/getting-started "ESLint Installation Docs").
 
 To install Prettier, you can run the simple terminal command `npm install --save-dev --save-exact prettier`. For more information, see the [Prettier Installation Docs](https://prettier.io/docs/en/install.html "Prettier Installation Docs").
+
+##### Installing GIT
+
+You can install GIT by following the instructions for your system given at [The GIT Installation Docs](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git "GIT Installation Docs").
 
 ## Running the Development Server
 
