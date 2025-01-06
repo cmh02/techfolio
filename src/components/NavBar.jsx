@@ -1,25 +1,11 @@
-import './NavBar.css';
 import logo from '../logo.svg';
 import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import { menu, close } from '../assets/index';
+import navlinks from '../constants/navigation';
+import hero from '../constants/hero';
 
 const NavBar = () => {
-  const navLinks = [
-    {
-      id: 'portfolio',
-      title: 'Portfolio',
-    },
-    {
-      id: 'project',
-      title: 'Projects',
-    },
-    {
-      id: 'contact',
-      title: 'Contact',
-    },
-  ];
-
   const [active, setActive] = useState('');
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -54,12 +40,13 @@ const NavBar = () => {
         >
           <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
           <p className="text-white text-[18px] font-bold cursor-pointer flex ">
-            YOUR NAME
+            {hero.name}
+            <span>{hero.title}</span>
           </p>
         </Link>
 
         <ul className="list-none hidden sm:flex flex-row gap-10">
-          {navLinks.map((nav) => (
+          {navlinks.map((nav) => (
             <li
               key={nav.id}
               className={`${active === nav.title ? 'text-white' : 'text-secondary'} hover:text-white text-[18px] font-medium cursor-pointer`}
@@ -81,7 +68,7 @@ const NavBar = () => {
             className={`${!toggle ? 'hidden' : 'flex'} p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
           >
             <ul className="list-none flex justify-end items-start flex-1 flex-col gap-4">
-              {navLinks.map((nav) => (
+              {navlinks.map((nav) => (
                 <li
                   key={nav.id}
                   className={`font-poppins font-medium cursor-pointer text-[16px] ${active === nav.title ? 'text-white' : 'text-secondary'}`}
