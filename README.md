@@ -32,6 +32,10 @@ To install Prettier, you can run the simple terminal command `npm install --save
 
 In order to run the development server, follow this simple guide once you have installed all of the above dependencies:
 
+1. Navigate to the directory containing the configured project
+2. In terminal, run the command `npc run start`
+3. If your default browser was not automatically launched, view the website at the IP address presented in the terminal. This should generally be [htttp://localhost:3000](http://localhost:3000 "localhost site").
+
 ## Creating and Deploying to Github Pages
 
 1. Fork this Repo to a one - {username}.github.io
