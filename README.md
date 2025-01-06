@@ -26,6 +26,8 @@ To install TailwindCSS, you can run the simple terminal command `npm install -D 
 
 ##### Installing Prettier
 
+To install Prettier, you can run the simple terminal command `npm install --save-dev --save-exact prettier`. For more information, see the [Prettier Installation Docs](https://prettier.io/docs/en/install.html "Prettier Installation Docs").
+
 ## Running the Development Server
 
 In order to run the development server, follow this simple guide once you have installed all of the above dependencies:
