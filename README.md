@@ -20,6 +20,12 @@ To install NVM, the process is straightforward. You can find the full walkthroug
 
 To install Node, we can use NVM. Following the instructions given on [the NVM Github Page](https://github.com/nvm-sh/nvm?tab=readme-ov-file#usage "NVM Github Page"), download the latest version of Node JS.
 
+##### Installing TailwindCSS via NPM
+
+To install TailwindCSS, you can run the simple terminal command `npm install -D tailwindcss`. For more information, see the [TailwindCSS Installation Docs](https://tailwindcss.com/docs/installation "TailwindCSS Installation Docs").
+
+##### Installing Prettier
+
 ## Running the Development Server
 
 In order to run the development server, follow this simple guide once you have installed all of the above dependencies:
