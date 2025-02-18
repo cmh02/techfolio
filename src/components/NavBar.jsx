@@ -1,4 +1,4 @@
-import logo from '../logo.svg';
+import logo from '../assets/logo/svg/logo-no-background.svg';
 import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import { menu, close } from '../assets/index';
@@ -13,6 +13,7 @@ const NavBar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
+      console.log('scrolled event occured');
       if (scrollTop > 100) {
         setScrolled(true);
       } else {
@@ -20,14 +21,14 @@ const NavBar = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    document.body.addEventListener('scroll', handleScroll);
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => document.body.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <nav
-      className={`sm:px-16 px-6 w-full flex items-center py-5 fixed top-0 z-20 ${scrolled ? 'bg-primary' : 'bg-transparent'}`}
+      className={`px-6 w-full flex items-center py-5 fixed top-0 z-20 bg-primary`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         <Link
@@ -38,9 +39,10 @@ const NavBar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
+          <img src={logo} alt="logo" className="w-39 h-9 object-contain" />
           <p className="text-white text-[18px] font-bold cursor-pointer flex ">
             {hero.name}
+            <br />
             <span>{hero.title}</span>
           </p>
         </Link>
