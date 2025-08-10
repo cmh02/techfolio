@@ -56,8 +56,8 @@ In order to run the development server, follow this simple guide once you have i
 2. Update the package.json - Home Property
    - "homepage": "https://{username}.github.io", // Update to correct username
 3. Checkout the main branch for this new repo
-4. Run npm install --legacy-peer-deps
-5. Run npm run deploy -- -m "Deploy React app to GitHub Pages vX.X.X" //make sure to update the version correctly
+4. Run `npm install --legacy-peer-deps`
+5. Run `npm run deploy -- -m "Deploy React app to GitHub Pages vX.X.X"` //make sure to update the version correctly
    - This will create a new branch in the repo called gh-pages, if one doesn't exists other wise it just creates an update
 6. Configure GitHub Pages
    - Navigate to the GitHub Pages settings page
