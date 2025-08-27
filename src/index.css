@@ -207,3 +207,8 @@
 section {
   min-height: 300px;
 }
+
+.main-content {
+  margin-top: 76px;
+  height: calc(100vh - 76px);
+}

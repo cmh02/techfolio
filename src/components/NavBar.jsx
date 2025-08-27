@@ -1,91 +1,70 @@
+
 import logo from '../assets/logo/svg/logo-no-background.svg';
-import { Link } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
-import { menu, close } from '../assets/index';
+import React, { useState } from 'react';
 import navlinks from '../constants/navigation';
 import hero from '../constants/hero';
 
 const NavBar = () => {
-  const [active, setActive] = useState('');
-  const [toggle, setToggle] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      console.log('scrolled event occured');
-      if (scrollTop > 100) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    document.body.addEventListener('scroll', handleScroll);
-
-    return () => document.body.removeEventListener('scroll', handleScroll);
-  }, []);
+  const [active, setActive] = useState('info');
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav
-      className={`px-6 w-full flex items-center py-5 fixed top-0 z-20 bg-primary`}
-    >
-      <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
-        <Link
-          to="/"
-          className="flex items-center gap-2"
-          onClick={() => {
-            setActive('');
-            window.scrollTo(0, 0);
-          }}
-        >
-          <img src={logo} alt="logo" className="w-39 h-9 object-contain" />
-          <p className="text-white text-[18px] font-bold cursor-pointer flex ">
-            {hero.name}
-            <br />
-            <span>{hero.title}</span>
-          </p>
-        </Link>
-
-        <ul className="list-none hidden sm:flex flex-row gap-10">
+    <nav className="w-full fixed top-0 left-0 z-30 bg-white/80 backdrop-blur shadow">
+      <div className="max-w-4xl mx-auto flex items-center justify-between px-4 py-3">
+        <div className="flex items-center gap-3">
+          <a href="#info" className="flex items-center gap-2" onClick={() => setActive('info')}>
+            <img src={logo} alt="logo" className="w-10 h-10 rounded-full border border-gray-200 shadow" />
+            <span className="font-bold text-lg text-gray-900">{hero.name}</span>
+          </a>
+        </div>
+        <ul className="hidden md:flex gap-8">
           {navlinks.map((nav) => (
-            <li
-              key={nav.id}
-              className={`${active === nav.title ? 'text-white' : 'text-secondary'} hover:text-white text-[18px] font-medium cursor-pointer`}
-              onClick={() => setActive(nav.title)}
-            >
-              <a href={`#${nav.id}`}>{nav.title}</a>
+            <li key={nav.id}>
+              <a
+                href={`#${nav.id}`}
+                className={`transition-colors duration-200 font-medium text-base px-2 py-1 rounded hover:bg-blue-100 hover:text-blue-600 ${active === nav.id ? 'text-blue-600 font-semibold' : 'text-gray-700'}`}
+                onClick={() => setActive(nav.id)}
+              >
+                {nav.title}
+              </a>
             </li>
           ))}
         </ul>
-        <div className="sm:hidden flex flex-1 justify-end items-center">
-          <img
-            src={toggle ? close : menu}
-            alt="menu"
-            className="w-[28px] h-[28px] object-contain"
-            onClick={() => setToggle(!toggle)}
-          />
-
-          <div
-            className={`${!toggle ? 'hidden' : 'flex'} p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
-          >
-            <ul className="list-none flex justify-end items-start flex-1 flex-col gap-4">
-              {navlinks.map((nav) => (
-                <li
-                  key={nav.id}
-                  className={`font-poppins font-medium cursor-pointer text-[16px] ${active === nav.title ? 'text-white' : 'text-secondary'}`}
+        <button
+          className="md:hidden flex items-center px-2 py-1 border rounded text-gray-700 border-gray-300"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            {menuOpen ? (
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            ) : (
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            )}
+          </svg>
+        </button>
+      </div>
+      {/* Mobile menu */}
+      {menuOpen && (
+        <div className="md:hidden bg-white border-t border-gray-200 shadow px-4 py-2">
+          <ul className="flex flex-col gap-3">
+            {navlinks.map((nav) => (
+              <li key={nav.id}>
+                <a
+                  href={`#${nav.id}`}
+                  className={`block px-2 py-1 rounded hover:bg-blue-100 hover:text-blue-600 ${active === nav.id ? 'text-blue-600 font-semibold' : 'text-gray-700'}`}
                   onClick={() => {
-                    setToggle(!toggle);
-                    setActive(nav.title);
+                    setActive(nav.id);
+                    setMenuOpen(false);
                   }}
                 >
-                  <a href={`#${nav.id}`}>{nav.title}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
+                  {nav.title}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
-      </div>
+      )}
     </nav>
   );
 };
