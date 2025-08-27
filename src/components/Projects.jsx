@@ -2,12 +2,12 @@ import projects from '../constants/projects';
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-20 bg-white/80">
+    <section id="projects" className="py-20 bg-white/80 dark:bg-black-100/80">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-white-100 mb-4 text-center">
           Projects
         </h2>
-        <p className="text-lg text-gray-700 mb-10 text-center">
+        <p className="text-lg text-gray-700 dark:text-gray-300 mb-10 text-center">
           A showcase of some of my favorite projects and what I’ve built
           recently.
         </p>
@@ -23,11 +23,13 @@ const Projects = () => {
                 <div key={idx} className="flex items-center gap-4">
                   <div className="flex-1">
                     <div
-                      className={`font-semibold text-base ${idx === 0 ? 'text-blue-600' : 'text-gray-900'}`}
+                      className={`font-semibold text-base ${idx === 0 ? 'text-blue-600 dark:text-accent' : 'text-gray-900 dark:text-white-100'}`}
                     >
                       {project.name}
                     </div>
-                    <div className="text-xs text-gray-500">2024 - Present</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400">
+                      2024 - Present
+                    </div>
                   </div>
                   <div className="text-xs text-gray-400">
                     {project.tags[0]?.name || ''}
@@ -41,7 +43,7 @@ const Projects = () => {
             {projects.map((project, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-xl shadow hover:shadow-lg transition-shadow border border-gray-100 flex flex-col h-full"
+                className="bg-white dark:bg-black-200 rounded-xl shadow hover:shadow-lg transition-shadow border border-gray-100 dark:border-black-200 flex flex-col h-full"
               >
                 <img
                   src={project.image}
