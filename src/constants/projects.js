@@ -1,4 +1,4 @@
-import { carrent } from '../assets';
+import { github } from '../assets';
 
 const projects = [
   {
@@ -19,7 +19,7 @@ const projects = [
         color: 'pink-text-gradient',
       },
     ],
-    image: carrent,
+    image: github,
     source_code_link: 'https://github.com/',
   },
 ];
