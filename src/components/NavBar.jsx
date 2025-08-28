@@ -10,18 +10,14 @@ const NavBar = () => {
 
   return (
     <nav className="w-full fixed top-0 left-0 z-30 bg-white/80 dark:bg-black-100/80 backdrop-blur shadow">
-      <div className="max-w-4xl mx-auto flex items-center justify-between px-4 py-3">
+      <div className="container mx-auto flex items-center justify-between px-4 py-3">
         <div className="flex items-center gap-3">
           <a
             href="#info"
-            className="flex items-center gap-2"
+            className="flex items-end gap-2"
             onClick={() => setActive('info')}
           >
-            <img
-              src={logo}
-              alt="logo"
-              className="w-10 h-10 rounded-full border border-gray-200 shadow"
-            />
+            <img src={logo} alt="logo" className="h-10 shadow" />
             <span className="font-bold text-lg text-gray-900 dark:text-white-100">
               {hero.name}
             </span>

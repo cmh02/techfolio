@@ -84,14 +84,14 @@ function App() {
             </div>
           </section>
           {/* About & Experience 2-column card layout */}
-          <section className="container mx-auto mb-5 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <section className="container mx-auto mb-5 grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="order-2 md:order-1">
-              <div className="bg-white dark:bg-black-100 rounded-2xl shadow-lg border border-gray-100 dark:border-black-200 p-8 h-full flex flex-col">
+              <div className="bg-white dark:bg-black-100 rounded-2xl shadow-lg border border-gray-100 dark:border-black-200 p-4 h-full flex flex-col">
                 <Experience />
               </div>
             </div>
             <div className="order-1 md:order-2">
-              <div className="bg-white dark:bg-black-100 rounded-2xl shadow-lg border border-gray-100 dark:border-black-200 p-8 h-full flex flex-col">
+              <div className="bg-white dark:bg-black-100 rounded-2xl shadow-lg border border-gray-100 dark:border-black-200 p-4 h-full flex flex-col">
                 <About />
               </div>
             </div>
