@@ -10,27 +10,36 @@ To clone the repository, follow the instructions on [The Github Docs](https://do
 
 ## Installing Dependencies
 
-A few dependencies are needed for the project. Follow the individual guides for each dependency below.
+Follow the individual guide below in order to run the application.
 
-##### Installing NVM
+WARNING - some commands must run from the root directory of the repo and others do not.
 
-To install NVM, the process is straightforward. You can find the full walkthrough for installing NVM on [the NVM Github Page](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating "NVM Github Page").
+### 1. Installing NVM
 
-##### Installing Node JS and NPM via NVM
+To install NVM, simply run `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash`. 
+If curious, nfind the full walkthrough for installing NVM on [the NVM Github Page](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating "NVM Github Page").
 
-To install Node, we can use NVM. Following the instructions given on [the NVM Github Page](https://github.com/nvm-sh/nvm?tab=readme-ov-file#usage "NVM Github Page"), download the latest version of Node JS.
+### 2. Installing Node JS and NPM via NVM
 
-##### Installing TailwindCSS via NPM
+To install Node, use NVM. Run `nvm install node` and subsequently run `nvm use node`.
+To learn more, follow the instructions given on [the NVM Github Page](https://github.com/nvm-sh/nvm?tab=readme-ov-file#usage "NVM Github Page"), download the latest version of Node JS.
 
-To install TailwindCSS, you can run the simple terminal command `npm install -D tailwindcss`. For more information, see the [TailwindCSS Installation Docs](https://tailwindcss.com/docs/installation "TailwindCSS Installation Docs").
+### 3. Navigate to the repository root directory
 
-##### Installing ESLint and Prettier via NPM
+Ensure your terminal's location is in the root directory of the repository. For Mac, use `pwd` and `ls` to identify the location. For Windows, use `dir` and `cd`.
+
+### 4. Installing TailwindCSS via NPM
+
+To install TailwindCSS, you can run the simple terminal command `npm install -D tailwindcss`. 
+For more information, see the [TailwindCSS Installation Docs](https://tailwindcss.com/docs/installation "TailwindCSS Installation Docs").
+
+### 5. Installing ESLint and Prettier via NPM
 
 You have two options when installing ESLint and Prettier:
 
 ###### Installing ESLint and Prettier Together
 
-To install ESLint and Prettier together, you can run the singular command `npm install -D eslint prettier eslint-plugin-react eslint-config-prettier eslint-plugin-prettier.`
+To install ESLint and Prettier together, you can run the singular command `npm install -D eslint prettier eslint-plugin-react eslint-config-prettier eslint-plugin-prettier`
 
 ###### Installing ESLint and Prettier Separately
 
@@ -38,16 +47,12 @@ To install ESLint, you can run the simple terminal command `npm init @eslint/con
 
 To install Prettier, you can run the simple terminal command `npm install --save-dev --save-exact prettier`. For more information, see the [Prettier Installation Docs](https://prettier.io/docs/en/install.html "Prettier Installation Docs").
 
-##### Installing GIT
-
-You can install GIT by following the instructions for your system given at [The GIT Installation Docs](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git "GIT Installation Docs").
-
 ## Running the Development Server
 
 In order to run the development server, follow this simple guide once you have installed all of the above dependencies:
 
 1. Navigate to the directory containing the configured project
-2. In terminal, run the command `npc run start`
+2. In terminal, run the command `npm run start`
 3. If your default browser was not automatically launched, view the website at the IP address presented in the terminal. This should generally be [htttp://localhost:3000](http://localhost:3000 "localhost site").
 
 ## Creating and Deploying to Github Pages
