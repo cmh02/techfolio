@@ -1,4 +1,5 @@
 const hero = {
+  email: 'mje0002@gmail.com',
   name: 'Matthew Echeverria',
   title: 'Software Engineer',
   tdlr: "I’m a software developer who codes with efficiency in mind, creating applications that minimize after-hours calls and make developers' lives easier.",
