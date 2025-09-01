@@ -4,20 +4,39 @@ Welcome! This guide will help you quickly personalize your portfolio with your b
 
 ---
 
-## 1. Adding Your Brand Colors
+## 1. How Styling Works (Material Theme)
 
-- **File:** `tailwind.config.js`
-- **How:**
-  - Edit the `theme.extend.colors` section to add or change your brand colors.
-  - Example:
-    ```js
-    colors: {
-      primary: "#1E293B", // Your main brand color
-      accent: "#22D3EE",  // Accent color
-      // ...
+- **File:** `src/index.css`
+  - All site colors and styles are based on CSS variables defined in `:root` and `.dark` selectors in `src/index.css`.
+  - These variables follow the Material Design 3 (Material You) system and can be generated using the [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/).
+  - Example variables:
+    ```css
+    :root {
+      --md-sys-color-primary: 9 20 38;
+      --md-sys-color-on-primary: 255 255 255;
+      --md-sys-color-secondary: 81 96 114;
+      --md-sys-color-background: 251 248 250;
+      /* ...more variables... */
+    }
+    .dark {
+      --md-sys-color-primary: 188 199 222;
+      --md-sys-color-on-primary: 38 49 67;
+      /* ...dark mode variables... */
     }
     ```
-  - Use these color names in your Tailwind classes (e.g., `bg-primary`, `text-accent`).
+  - Tailwind classes like `bg-primary`, `text-on-primary`, `border-outline`, etc., are mapped to these variables via `tailwind.config.js`.
+  - To change the theme, update the variables in `src/index.css` (use the Material Theme Builder for easy generation).
+
+---
+
+## 4. Adding a Personal Photo to the Hero Section
+
+- **File:** `src/assets/personal.jpg`
+  - Add your personal photo as `personal.jpg` in the `src/assets/` folder.
+  - The hero section will automatically render this image if present.
+  - For best results, use a square image (e.g., 512x512px).
+
+---
 
 ---
 
