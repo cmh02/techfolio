@@ -9,11 +9,11 @@ const iconMap = {
 
 const Footer = () => {
   return (
-    <footer className="w-full py-8 bg-white dark:bg-black-100 border-t border-gray-200 dark:border-black-200 mt-16">
+    <footer className="w-full py-8 border-t mt-16 bg-primary border-secondary">
       <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between px-4 gap-4">
         <a
           href="#"
-          className="font-bold text-lg text-blue-600 dark:text-accent hover:underline mb-2 md:mb-0"
+          className="font-bold text-lg hover:underline mb-2 md:mb-0 text-on-primary"
         >
           My Portfolio
         </a>
@@ -24,30 +24,22 @@ const Footer = () => {
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-gray-700 dark:text-white-100 hover:text-blue-600 dark:hover:text-accent"
+              className="flex items-center gap-2 hover:underline text-foreground"
             >
-              {iconMap[social.icon] && social.icon === 'github' ? (
-                <img
-                  src={iconMap[social.icon]}
-                  alt={social.name}
-                  className="w-6 h-6"
-                />
-              ) : (
-                <img
-                  src={iconMap[social.icon]}
-                  alt={social.name}
-                  className="w-6 h-6"
-                />
-              )}
+              <img
+                src={iconMap[social.icon]}
+                alt={social.name}
+                className="w-6 h-6"
+              />
               <span className="hidden md:inline">{social.name}</span>
             </a>
           ))}
         </div>
         <a
           href="#"
-          className="online flex items-center gap-2 text-green-600 dark:text-green-400 font-medium"
+          className="online flex items-center gap-2 font-medium text-green-600"
         >
-          <span className="inline-block w-3 h-3 bg-green-500 rounded-full"></span>
+          <span className="inline-block w-3 h-3 rounded-full bg-green-500"></span>
           Available For Job
         </a>
       </div>

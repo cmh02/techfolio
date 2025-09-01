@@ -2,28 +2,33 @@ import experiences from '../constants/experience';
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-20 bg-gray-50 dark:bg-black-200">
+    <section id="experience" className="py-20 bg-surface-container">
       <div className="max-w-3xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-white-100 mb-4 text-center">
+        <h2 className="text-3xl font-bold mb-4 text-center text-on-surface">
           Experience
         </h2>
-        <p className="text-lg text-gray-700 dark:text-gray-300 mb-10 text-center">
+        <p className="text-lg mb-10 text-center text-on-surface-variant">
           Here’s a quick look at my professional journey and the companies I’ve
           worked with.
         </p>
-        <div className="relative dark:border-black-100">
+        <div className="relative">
           {experiences.map((exp, idx) => (
-            <div key={idx} className="mb-2">
-              <div className="bg-white dark:bg-black-100 rounded-lg shadow p-5 border border-gray-100 dark:border-black-200">
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white-100">
-                    {exp.icon} {exp.title}
-                  </h3>
-                  <span className="text-blue-600 dark:text-accent font-medium mb-2">
+            <div key={idx} className="mb-4">
+              <div className="rounded-xl border border-outline bg-surface shadow-lg p-6 flex flex-col gap-2 transition-transform hover:scale-[1.015] hover:shadow-xl">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 gap-2">
+                  <div className="flex items-center gap-3">
+                    {/* <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary text-xl font-bold shadow-sm border border-primary">
+                      {exp.icon}
+                    </span> */}
+                    <h3 className="text-lg font-semibold text-tertiary">
+                      {exp.title}
+                    </h3>
+                  </div>
+                  <span className="font-medium text-sm px-3 py-1 rounded-full bg-primary-container text-on-primary-container border border-outline">
                     {exp.company_name}
                   </span>
                 </div>
-                <div className="text-sm text-gray-500 dark:text-gray-400">
+                <div className="text-sm text-on-surface-variant mb-1">
                   {exp.date}
                 </div>
               </div>
