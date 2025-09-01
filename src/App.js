@@ -6,8 +6,18 @@ import Footer from './components/Footer';
 import { BrowserRouter } from 'react-router-dom';
 import hero from './constants/hero';
 import personal from './assets/personal.jpg';
+import { useState } from 'react';
 
 function App() {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(hero.email).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
+
   return (
     <BrowserRouter>
       <div className="min-h-screen bg-surface-container flex flex-col">
@@ -29,8 +39,13 @@ function App() {
                     {hero.tdlr}
                   </p>
                   <div className="flex gap-4">
-                    <button className="hire bg-primary text-on-primary px-5 py-2 rounded-lg font-semibold flex items-center gap-2 hover:bg-primary/80 transition">
-                      Hire me
+                    <a
+                      href="/resume.pdf"
+                      download
+                      className="hire bg-primary text-on-primary px-5 py-2 rounded-lg font-semibold flex items-center gap-2 hover:bg-primary/80 transition"
+                      aria-label="Download Resume PDF"
+                    >
+                      Resume
                       <span className="inline-block w-4 h-4 bg-on-primary/30 rounded-full flex items-center justify-center">
                         <svg
                           className="w-4 h-4"
@@ -46,21 +61,48 @@ function App() {
                           />
                         </svg>
                       </span>
-                    </button>
-                    <button className="email bg-secondary text-on-secondary px-5 py-2 rounded-lg font-semibold flex items-center gap-2 hover:bg-secondary/80 transition">
-                      Copy Email
-                      <span className="inline-block w-4 h-4 bg-on-secondary/30 rounded-full flex items-center justify-center">
-                        <svg
-                          className="w-4 h-4"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          viewBox="0 0 24 24"
-                        >
-                          <rect x="9" y="9" width="13" height="13" rx="2" />
-                          <rect x="3" y="3" width="13" height="13" rx="2" />
-                        </svg>
-                      </span>
+                    </a>
+                    <button
+                      className="email bg-secondary text-on-secondary px-5 py-2 rounded-lg font-semibold flex items-center gap-2 hover:bg-secondary/80 transition"
+                      aria-label="Copy Email to Clipboard"
+                      onClick={handleCopyEmail}
+                    >
+                      {copied ? (
+                        <>
+                          Copied!
+                          <span className="inline-block w-4 h-4 rounded-full flex items-center justify-center">
+                            <svg
+                              className="w-4 h-4 text-green-600"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M5 13l4 4L19 7"
+                              />
+                            </svg>
+                          </span>
+                        </>
+                      ) : (
+                        <>
+                          Copy Email
+                          <span className="inline-block w-4 h-4 bg-on-secondary/30 rounded-full flex items-center justify-center">
+                            <svg
+                              className="w-4 h-4"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              viewBox="0 0 24 24"
+                            >
+                              <rect x="9" y="9" width="13" height="13" rx="2" />
+                              <rect x="3" y="3" width="13" height="13" rx="2" />
+                            </svg>
+                          </span>
+                        </>
+                      )}
                     </button>
                   </div>
                 </div>
